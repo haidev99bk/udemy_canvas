@@ -6,6 +6,8 @@ window.onload = () => {
   var context1 = canvas1.getContext("2d");
   var context2 = canvas2.getContext("2d");
 
+  const radian = Math.PI / 180;
+
   // Blue rectangle:
   context1.fillStyle = "blue";
   context1.fillRect(0, 0, 30, 20);
@@ -49,7 +51,15 @@ window.onload = () => {
   context2.strokeStyle = "green";
   context2.lineWidth = 1;
   context2.shadowColor = "#333";
-  context2.shadowOffsetX = 2;
-  context2.shadowOffsetY = 3;
-  context2.shaddowBlur = context2.stroke();
+  context2.shadowOffsetX = 1;
+  context2.shadowOffsetY = 2;
+  context2.shadowBlur = 1;
+  context2.stroke();
+
+  // arc
+  context1.beginPath();
+  context1.strokeStyle = "red";
+  context1.lineWidth = 2;
+  context1.arc(60, 60, 10, 0 * radian, 90 * radian, false);
+  context1.stroke();
 };
